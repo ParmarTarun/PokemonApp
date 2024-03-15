@@ -1,0 +1,54 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.pokemons-wrapper {
+  display: flex;
+  width: 60%;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .pokemons-wrapper {
+    width: 95%;
+  }
+}
+
+.pokemon-card {
+  background-color: antiquewhite;
+  display: block;
+  text-decoration: none;
+  border: 1px solid black;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  color: #242424;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.pokemon-card:hover {
+  background-color: chocolate;
+  color: antiquewhite;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+button {
+  background-color: transparent;
+  color: antiquewhite;
+  padding: 0.5rem 1rem;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+button:hover {
+  text-decoration: underline;
+}
