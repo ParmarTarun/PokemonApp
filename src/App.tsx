@@ -6,10 +6,10 @@ import { Pokemon } from "./types";
 function App() {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
   const [totalCount, setTotalCount] = useState<number>(0);
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true);
 
   const loadPokemons = () => {
-    setIsLoading(true)
+    setIsLoading(true);
     getPokemons(pokemons.length)
       .then((data) => {
         setPokemons([...pokemons, ...data.results]);
@@ -18,7 +18,8 @@ function App() {
       .catch((e) => {
         alert("Failed to fetch pokemons. Check Console!");
         console.log(e);
-      }).finally(()=>setIsLoading(false));
+      })
+      .finally(() => setIsLoading(false));
   };
 
   useEffect(() => {
@@ -40,13 +41,11 @@ function App() {
       <p>
         Showing {pokemons.length} of {totalCount}
       </p>
-      {
-        isLoading
-        ? 
+      {isLoading ? (
         <p>Loading...</p>
-        :
+      ) : (
         <button onClick={loadPokemons}>Load more</button>
-      }
+      )}
     </>
   );
 }
